@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.6dcfeabb.chunk.css",
-    "main.js": "/static/js/main.57578a6a.chunk.js",
-    "main.js.map": "/static/js/main.57578a6a.chunk.js.map",
+    "main.css": "/static/css/main.a0a439d0.chunk.css",
+    "main.js": "/static/js/main.5ebbafa9.chunk.js",
+    "main.js.map": "/static/js/main.5ebbafa9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.52fac4f7.js",
     "runtime-main.js.map": "/static/js/runtime-main.52fac4f7.js.map",
     "static/js/2.c966fdf0.chunk.js": "/static/js/2.c966fdf0.chunk.js",
     "static/js/2.c966fdf0.chunk.js.map": "/static/js/2.c966fdf0.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.6dcfeabb.chunk.css.map": "/static/css/main.6dcfeabb.chunk.css.map",
+    "static/css/main.a0a439d0.chunk.css.map": "/static/css/main.a0a439d0.chunk.css.map",
     "static/js/2.c966fdf0.chunk.js.LICENSE.txt": "/static/js/2.c966fdf0.chunk.js.LICENSE.txt",
     "static/media/3dhead.5190f499.png": "/static/media/3dhead.5190f499.png",
     "static/media/CV-Jorge-Soucasaux-Monteiro-2021.7670d3b1.pdf": "/static/media/CV-Jorge-Soucasaux-Monteiro-2021.7670d3b1.pdf",
@@ -94,7 +94,7 @@
   "entrypoints": [
     "static/js/runtime-main.52fac4f7.js",
     "static/js/2.c966fdf0.chunk.js",
-    "static/css/main.6dcfeabb.chunk.css",
-    "static/js/main.57578a6a.chunk.js"
+    "static/css/main.a0a439d0.chunk.css",
+    "static/js/main.5ebbafa9.chunk.js"
   ]
 }
