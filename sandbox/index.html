@@ -4,23 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sandbox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,900&display=swap"
+      rel="stylesheet" />
+    <style>
+      * {
+        font-family: 'Chivo Mono', sans-serif;
+        box-sizing: border-box;
+      }
+      body {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        padding: 2rem;
+        background-color: #e8e8e8;
+        min-height: 100vh;
+      }
+      h1 {
+        width: 50%;
+        font-size: 18rem;
+        color: #ff4000;
+        line-height: 0.65;
+        margin: 0;
+        background-color: white;
+        word-break: break-all;
+      }
+      ul {
+        padding-left: 8rem;
+        list-style: none;
+      }
+      ul li {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      ul li a {
+        color: black;
+        text-decoration: none;
+        display: inline-block;
+        padding: 4px 9px;
+      }
+      ul li a:hover {
+        color: #ff4000;
+        background-color: white;
+      }
+    </style>
   </head>
   <body>
-    <script>
-      var url = 'http://someserver/somepath/somedir/?C=M;O=A'
-      $.get(url, (data) => {
-        console.log(data)
-        let listing = parseDirectoryListing(data)
-        $('body').append(JSON.stringify(listing))
-      })
-
-      function parseDirectoryListing(text) {
-        let docs = text
-          .match(/href="([\w]+)/g) // pull out the hrefs
-          .map((x) => x.replace('href="', '')) // clean up
-        console.log(docs)
-        return docs
-      }
-    </script>
+    <h1>SCSX Sandbox</h1>
+    <ul>
+      <li>
+        <a href="https://scsxrecipes.wordpress.com/" target="_blank">AAIM</a>
+      </li>
+      <li>
+        <a href="https://scsxrecipes.wordpress.com/" target="_blank"
+          >Bracket Remover</a
+        >
+      </li>
+      <li>
+        <a href="https://scsxrecipes.wordpress.com/" target="_blank"
+          >geoapi.pt Playground</a
+        >
+      </li>
+      <li>
+        <a href="https://scsxrecipes.wordpress.com/" target="_blank"
+          >Fachadas Pombalinas</a
+        >
+      </li>
+      <li>
+        <a href="https://scsxrecipes.wordpress.com/" target="_blank"
+          >SCSX Recipes</a
+        >
+      </li>
+    </ul>
   </body>
 </html>
