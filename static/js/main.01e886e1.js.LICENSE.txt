@@ -5,35 +5,42 @@ object-assign
 */
 
 /*!
-   * Sizzle CSS Selector Engine v2.2.0-pre
+   * Sizzle CSS Selector Engine v2.2.1
    * http://sizzlejs.com/
    *
-   * Copyright 2008, 2014 jQuery Foundation, Inc. and other contributors
+   * Copyright jQuery Foundation and other contributors
    * Released under the MIT license
    * http://jquery.org/license
    *
-   * Date: 2014-12-16
+   * Date: 2015-10-17
    */
 
 /*!
- * Chart.js v3.6.2
- * https://www.chartjs.org
- * (c) 2021 Chart.js Contributors
+ * @kurkle/color v0.2.1
+ * https://github.com/kurkle/color#readme
+ * (c) 2022 Jukka Kurkela
  * Released under the MIT License
  */
 
 /*!
- * jQuery JavaScript Library v1.11.3
+ * Chart.js v3.9.1
+ * https://www.chartjs.org
+ * (c) 2022 Chart.js Contributors
+ * Released under the MIT License
+ */
+
+/*!
+ * jQuery JavaScript Library v1.12.4
  * http://jquery.com/
  *
  * Includes Sizzle.js
  * http://sizzlejs.com/
  *
- * Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
+ * Copyright jQuery Foundation and other contributors
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2015-04-28T16:19Z
+ * Date: 2016-05-20T17:17Z
  */
 
 /*! @license Rematrix v0.3.0
@@ -57,6 +64,18 @@ object-assign
 	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 	THE SOFTWARE.
+*/
+
+/*! @license ScrollReveal v4.0.9
+
+	Copyright 2021 Fisssion LLC.
+
+	Licensed under the GNU General Public License 3.0 for
+	compatible open source projects and non-commercial use.
+
+	For commercial sites, themes, projects, and applications,
+	keep your source code private/proprietary by purchasing
+	a commercial license from https://scrollrevealjs.org/
 */
 
 /*! @license Tealight v0.3.6
