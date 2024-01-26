@@ -1,0 +1,55 @@
+* {
+  font-family: 'Caprasimo', serif;
+}
+
+.linetext {
+  font-family: 'Linefont', system-ui;
+  font-size: 4rem;
+}
+
+section {
+  position: relative;
+  min-height: 100vh;
+}
+
+section h1 {
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 5rem;
+}
+section.section-one {
+  background-color: coral;
+}
+section.section-one h1 {
+  color: white;
+}
+section.section-one * {
+  position: relative;
+  z-index: 2;
+}
+section.section-one p.linetext {
+  width: 66.66%;
+  margin: 10% auto 0 auto;
+  text-align: center;
+  line-height: 1;
+}
+section.section-one #firstSvg,
+section.section-one #secondSvg,
+section.section-one #thirdSvg {
+  position: absolute;
+  opacity: 0.25;
+  z-index: 1;
+  left: 18%;
+  top: 15%;
+  /* transform: translate(-50%, -40%); */
+  animation: rotation 50s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
