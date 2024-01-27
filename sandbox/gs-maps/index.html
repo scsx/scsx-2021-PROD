@@ -26,12 +26,18 @@
         width: 1400px;
         height: 800px;
         margin: 3rem auto;
+        border: 10px solid transparent;
+        border-image: url('./gold-and-red-seamless-classic-greek-ornament-endless-european-pattern-border-frame-ancient-greece-roman-empire-vector.jpg')
+          75 round;
       }
+
       .el {
         position: absolute;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
+        transform: translate(-50%, -50%);
+
       }
       .el.chest {
         width: 50px;
@@ -45,16 +51,14 @@
         background-image: url('./tree.png');
       }
       .el.hollyBush {
-        width: 10px;
-        height: 10px;
-        background-color: red;
-        border-radius: 50%;
+        width: 28px;
+        height: 16px;
+        background-image: url('./holly.png');
       }
       .el.hawBush {
-        width: 10px;
-        height: 10px;
-        background-color: #953173;
-        border-radius: 50%;
+        width: 28px;
+        height: 16px;
+        background-image: url('./haw.png');
       }
       .el.tombstone {
         width: 10px;
@@ -78,22 +82,24 @@
   <body>
     <h1>Grim Soul 3 Skull Map</h1>
 
-    <div id="map"></div>
+    <div id="map">
+      <div class="deco hor"></div>
+      <div class="deco ver"></div>
+    </div>
 
     <script>
       const woodS3map = document.getElementById('map')
       const mapWidth = 1400
       const mapHeight = 800
-      const margin = 30
+      const margin = 50
       const chestMarginHor = 450
       const chestMarginVer = 200
 
       const getRandomOneOrAnother = (a, b) => (Math.random() < 0.5 ? a : b)
 
       const getRandomOnMapHor = () => {
-        return (
-          Math.floor(Math.random() * (mapWidth - margin - margin + 1)) + margin
-        )
+        console.log(Math.floor(Math.random() * ((mapWidth - (margin * 2)) - (margin * 2) + 1)) + (margin * 2))
+        return Math.floor(Math.random() * ((mapWidth - margin) - margin + 1)) + margin
       }
       const getRandomOnMapVer = () => {
         return (
@@ -104,16 +110,26 @@
         )
       }
 
+      function getRandomPosition(min, max) {
+        console.log(min, max)
+        return Math.floor(Math.random() * (max - min + 1)) + min
+      }
+
+      getRandomPosition(margin, mapWidth)
+
       const getRandomChestOnMapHor = () => {
         return (
-          Math.floor(Math.random() * (mapWidth - chestMarginHor - chestMarginHor + 1)) + chestMarginHor
+          Math.floor(
+            Math.random() * (mapWidth - chestMarginHor - chestMarginHor + 1)
+          ) + chestMarginHor
         )
       }
 
       const getRandomChestOnMapVer = () => {
         return (
           Math.floor(
-            Math.random() * (mapHeight - chestMarginVer * 1.5 - chestMarginVer * 1.5 + 1)
+            Math.random() *
+              (mapHeight - chestMarginVer * 1.5 - chestMarginVer * 1.5 + 1)
           ) +
           chestMarginVer * 1.5
         )
@@ -151,11 +167,11 @@
         }
       }
 
-      drawElement('tree')
       drawElement('hollyBush')
       drawElement('hawBush')
       drawElement('stone')
       drawElement('copper')
+      drawElement('tree')
       drawElement('tombstone')
       drawChest()
     </script>
