@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grim Soul 3 Skull Map</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap"
+      rel="stylesheet" />
+    <style>
+      body {
+        background-color: #2f2f2f;
+      }
+      h1 {
+        width: 1400px;
+        margin: 1rem auto;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #map {
+        position: relative;
+        background-color: #514a40;
+        width: 1400px;
+        height: 800px;
+        margin: 3rem auto;
+      }
+      .el {
+        position: absolute;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+      .el.chest {
+        width: 50px;
+        height: 40px;
+        background-image: url('./chest.png');
+        background-size: contain;
+      }
+      .el.tree {
+        width: 30px;
+        height: 38px;
+        background-image: url('./tree.png');
+      }
+      .el.hollyBush {
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        border-radius: 50%;
+      }
+      .el.hawBush {
+        width: 10px;
+        height: 10px;
+        background-color: #953173;
+        border-radius: 50%;
+      }
+      .el.tombstone {
+        width: 10px;
+        height: 16px;
+        background-color: #a8a8a8;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+      }
+      .el.stone {
+        width: 30px;
+        height: 20px;
+        background-image: url('./stone.webp');
+      }
+      .el.copper {
+        width: 30px;
+        height: 20px;
+        background-image: url('./copper.png');
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Grim Soul 3 Skull Map</h1>
+
+    <div id="map"></div>
+
+    <script>
+      const woodS3map = document.getElementById('map')
+      const mapWidth = 1400
+      const mapHeight = 800
+      const margin = 30
+      const chestMarginHor = 450
+      const chestMarginVer = 200
+
+      const getRandomOneOrAnother = (a, b) => (Math.random() < 0.5 ? a : b)
+
+      const getRandomOnMapHor = () => {
+        return (
+          Math.floor(Math.random() * (mapWidth - margin - margin + 1)) + margin
+        )
+      }
+      const getRandomOnMapVer = () => {
+        return (
+          Math.floor(
+            Math.random() * (mapHeight - margin * 1.5 - margin * 1.5 + 1)
+          ) +
+          margin * 1.5
+        )
+      }
+
+      const getRandomChestOnMapHor = () => {
+        return (
+          Math.floor(Math.random() * (mapWidth - chestMarginHor - chestMarginHor + 1)) + chestMarginHor
+        )
+      }
+
+      const getRandomChestOnMapVer = () => {
+        return (
+          Math.floor(
+            Math.random() * (mapHeight - chestMarginVer * 1.5 - chestMarginVer * 1.5 + 1)
+          ) +
+          chestMarginVer * 1.5
+        )
+      }
+
+      const resourcesS3_Wood = {
+        copper: 9,
+        tree: 85,
+        tombstone: 6,
+        stone: 6,
+        chests: getRandomOneOrAnother(4, 5),
+        hollyBush: 30,
+        hawBush: 30
+      }
+
+      const drawElement = (name) => {
+        for (let index = 0; index < resourcesS3_Wood[name]; index++) {
+          const newDiv = document.createElement('div')
+          newDiv.classList.add('el')
+          newDiv.classList.add(name)
+          newDiv.style.left = getRandomOnMapHor() + 'px'
+          newDiv.style.top = getRandomOnMapVer() + 'px'
+          woodS3map.appendChild(newDiv)
+        }
+      }
+
+      const drawChest = () => {
+        for (let index = 0; index < resourcesS3_Wood.chests; index++) {
+          const newDiv = document.createElement('div')
+          newDiv.classList.add('el')
+          newDiv.classList.add('chest')
+          newDiv.style.left = getRandomChestOnMapHor() + 'px'
+          newDiv.style.top = getRandomChestOnMapVer() + 'px'
+          woodS3map.appendChild(newDiv)
+        }
+      }
+
+      drawElement('tree')
+      drawElement('hollyBush')
+      drawElement('hawBush')
+      drawElement('stone')
+      drawElement('copper')
+      drawElement('tombstone')
+      drawChest()
+    </script>
+  </body>
+</html>
