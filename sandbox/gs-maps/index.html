@@ -26,9 +26,6 @@
         width: 1400px;
         height: 800px;
         margin: 3rem auto;
-        border: 10px solid transparent;
-        border-image: url('./gold-and-red-seamless-classic-greek-ornament-endless-european-pattern-border-frame-ancient-greece-roman-empire-vector.jpg')
-          75 round;
       }
 
       .el {
@@ -95,10 +92,9 @@
       const chestMarginHor = 450
       const chestMarginVer = 200
 
-      const getRandomOneOrAnother = (a, b) => (Math.random() < 0.5 ? a : b)
+      const getOneOrAnother = (a, b) => (Math.random() < 0.5 ? a : b)
 
       const getRandomOnMapHor = () => {
-        console.log(Math.floor(Math.random() * ((mapWidth - (margin * 2)) - (margin * 2) + 1)) + (margin * 2))
         return Math.floor(Math.random() * ((mapWidth - margin) - margin + 1)) + margin
       }
       const getRandomOnMapVer = () => {
@@ -109,13 +105,6 @@
           margin * 1.5
         )
       }
-
-      function getRandomPosition(min, max) {
-        console.log(min, max)
-        return Math.floor(Math.random() * (max - min + 1)) + min
-      }
-
-      getRandomPosition(margin, mapWidth)
 
       const getRandomChestOnMapHor = () => {
         return (
@@ -140,7 +129,7 @@
         tree: 85,
         tombstone: 6,
         stone: 6,
-        chests: getRandomOneOrAnother(4, 5),
+        chests: getOneOrAnother(4, 5),
         hollyBush: 30,
         hawBush: 30
       }
