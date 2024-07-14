@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- RANDOM MEALS -->
+    <script>
+      const data = {
+        guarnicao: [
+          'Arroz (velho salteia-se no wok)',
+          'Massa (esparguete, tagliatelle, guardar com azeite)',
+          'Noodles',
+          'Vegetais salteados',
+          'Vegetais no forno',
+          'Batata palha (brás)',
+          'Batata frita na air fryer',
+          'Batata cozida (pode ser salteada)',
+          'Puré de batata / batata doce'
+        ],
+        principal: [
+          'Frango - Cozido, forno, etc',
+          'Salmão',
+          'Carne assada (caixas 5€)',
+          'Atum',
+          'Douradinhos, outros panados',
+          'Camarão',
+          'Bacalhau desfiado'
+        ],
+        molho: ['Pesto (verde/vermelho)', 'Soja', 'Alabama White Sauce']
+      }
+
+      function getRandomMeal() {
+        const randomGuarnicao = data.guarnicao[Math.floor(Math.random() * data.guarnicao.length)]
+        const randomPrincipal = data.principal[Math.floor(Math.random() * data.principal.length)]
+        const randomMolho = data.molho[Math.floor(Math.random() * data.molho.length)]
+
+        /* return {
+          guarnicao: randomGuarnicao,
+          principal: randomPrincipal,
+          molho: randomMolho
+        } */
+
+        return `${randomGuarnicao} com ${randomPrincipal} (Molho opcional: ${randomMolho})`
+      }
+
+      console.log(getRandomMeal())
+    </script>
+
+    <!-- WORDPRESS -->
+    <h1>Posts Recentes do Blog</h1>
+    <ul id="posts"></ul>
+
+    <script>
+      // Substitua 'yourdomain.com' pelo seu domínio do WordPress
+      /* fetch('https://scsxrecipes.wordpress.com/wp-json/wp/v2/posts', { mode: 'no-cors' })
+        .then((response) => response.json())
+        .then((posts) => {
+          const postsContainer = document.getElementById('posts')
+          posts.forEach((post) => {
+            const li = document.createElement('li')
+            const postTitle = document.createElement('h2')
+            postTitle.textContent = post.title.rendered
+            const postLink = document.createElement('a')
+            postLink.href = post.link
+            postLink.textContent = 'Leia mais'
+            postLink.target = '_blank'
+
+            li.appendChild(postTitle)
+            li.appendChild(postLink)
+            postsContainer.appendChild(li)
+          })
+        })
+        .catch((error) => console.error('Erro ao buscar posts:', error)) */
+
+      async function getWPPosts() {
+        const response = await fetch('https://scsxrecipes.wordpress.com/wp-json/wp/v2/posts')
+        const posts = await response.json()
+
+        console.log(posts)
+      }
+
+      getWPPosts()
+    </script>
+  </body>
+</html>
