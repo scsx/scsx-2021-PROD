@@ -54,35 +54,30 @@
     <ul id="posts"></ul>
 
     <script>
-      // Substitua 'yourdomain.com' pelo seu domínio do WordPress
-      /* fetch('https://scsxrecipes.wordpress.com/wp-json/wp/v2/posts', { mode: 'no-cors' })
-        .then((response) => response.json())
-        .then((posts) => {
-          const postsContainer = document.getElementById('posts')
-          posts.forEach((post) => {
-            const li = document.createElement('li')
-            const postTitle = document.createElement('h2')
-            postTitle.textContent = post.title.rendered
-            const postLink = document.createElement('a')
-            postLink.href = post.link
-            postLink.textContent = 'Leia mais'
-            postLink.target = '_blank'
+      async function getAllWPPosts(page = 1, allPosts = []) {
+        try {
+          const response = await fetch(
+            `https://public-api.wordpress.com/rest/v1.1/sites/scsxrecipes.wordpress.com/posts/?number=100&page=${page}`
+          )
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`)
+          }
+          const data = await response.json()
+          allPosts = allPosts.concat(data.posts)
 
-            li.appendChild(postTitle)
-            li.appendChild(postLink)
-            postsContainer.appendChild(li)
-          })
-        })
-        .catch((error) => console.error('Erro ao buscar posts:', error)) */
-
-      async function getWPPosts() {
-        const response = await fetch('https://scsxrecipes.wordpress.com/wp-json/wp/v2/posts')
-        const posts = await response.json()
-
-        console.log(posts)
+          if (data.posts.length === 0 || allPosts.length >= data.found) {
+            console.log('Todos os posts foram carregados:', allPosts)
+            // Aqui você pode adicionar código para manipular e exibir os posts no HTML
+            return allPosts
+          } else {
+            return getAllWPPosts(page + 1, allPosts)
+          }
+        } catch (error) {
+          console.error('Erro ao buscar os posts:', error)
+        }
       }
 
-      getWPPosts()
+      getAllWPPosts() // Chama a função para começar a buscar todos os posts
     </script>
   </body>
 </html>
